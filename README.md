@@ -1,1 +1,5 @@
 # Dynamo_Style_Fault_Tolerant_Key_Value_Storage
+1. The goal is to build a Dynamo DB style fault tolerant key-value storage with features like partitioning, replication, failure handling to provide availability and linearizability guarantees. 
+2. The storage system is built using a group of android devices representing the storage servers of replicated database, messages sent to the group are routed to the appropriate server based on DHT chord theory and are replicated across 2 other servers for backup. 
+3. In case any devices from the group crash, they should back up all the messages belonging to them and whatever they missed during the downtime using the replication strategy when they come back up. 
+4. Thus we can maintain a fault tolerant database with availability and linearizability guarantees.
